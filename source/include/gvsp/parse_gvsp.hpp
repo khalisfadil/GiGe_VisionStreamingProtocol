@@ -25,5 +25,5 @@ struct PacketData {
 extern uint64_t g_start_timestamp;
 extern uint16_t g_current_block_id;
 
-void showImage(const std::vector<uint8_t>& payload, cv::VideoWriter& video, uint64_t timestamp);
+void showImage(const std::vector<uint8_t>& payload, cv::VideoWriter& video, uint64_t timestamp, bool is_rgb);
 void closeVideo(cv::VideoWriter& video, const std::string& filename);

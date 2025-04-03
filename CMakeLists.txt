@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Enable AVX2 optimizations (your CPU supports it)
+# Enable AVX2 optimizations
 add_compile_options(-mavx2)
 
 # Find OpenCV using pkg-config
@@ -24,7 +24,7 @@ include_directories(
 
 # Source files
 set(SOURCES
-    ${CMAKE_SOURCE_DIR}/source/src/gvsp/parse_gvsp.cpp
+    ${CMAKE_SOURCE_DIR}/source/src/gvsp/parse_gvsp.cpp  # Main source file
 )
 
 # Header files (optional, for IDE recognition)
@@ -37,7 +37,7 @@ set(HEADERS
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 # Link OpenCV libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBRARIES} stdc++fs)
 
 # Set output directory for the executable
 set_target_properties(${PROJECT_NAME} PROPERTIES
